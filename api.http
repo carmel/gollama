@@ -1,0 +1,18 @@
+@dev_server=http://192.168.3.21:8090
+
+### ai chat
+POST {{dev_server}}/v1/chat/completions
+Accept: application/json
+Content-Type: application/json
+
+{
+"model": "local",
+"stream": false,
+"messages": [
+    {"role": "system", "content": "You are helpful."},
+    {"role": "user", "content": "Introduce yourself."}
+],
+"max_tokens": 128,
+"temperature": 0.2,
+"stream_options": {"include_usage": true}
+}
